@@ -1,9 +1,9 @@
 require 'sinatra'
+## require 'sinatra/reloader
 
-get '/' do
-  'hello world!'
+
+get '/hello/:name' do
+  "hello #{params[:name]}"
 end
-git 
-get '/about' do
-  'this is page site'
-end
+
+

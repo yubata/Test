@@ -1,1 +1,17 @@
-    <div><%= @content %></div>
+<DOCTYPE html>
+  <html lang="ja">
+    <head>
+      <meta charset="utf-8">
+      <title>BBS</title>
+    </head>
+    <body>
+      <h1>BBS</h1>
+      <u1>
+        <% @comments.each do |comment| %>
+        <li data-id="<%= @comment.id %>"">
+          <%= comment.body %>
+        </li>
+        <% end %>
+      </u1>
+    </body>
+  </html>

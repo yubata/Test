@@ -1,5 +1,5 @@
 require 'sinatra'
-## require 'sinatra/reloader
+require 'sinatra/reloader'
 
 before '/admin/*' do
   @msg = "admin area!"
@@ -20,14 +20,21 @@ helpers do
 end
 
 get '/' do
-  @title = "main index"
+  @title = "main"
   @content = "main content by " + @author
   erb :index
 end
 
-get'/about' do
+get '/about' do
   @title = "about this page"
   @content = "this page is ... by " + strong(@author)
+  @email = "taguchi@email.com"
+  erb :about
+end
+
+  get'/admin/' do
+  @title = "about this page"
+  @content = "this page is ... by " + strong(@msg)
   @email = "taguchi@email.com"
   erb :about
 end

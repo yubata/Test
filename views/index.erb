@@ -10,18 +10,18 @@
       <h2>Add New</h2>
       <form method="post" action="/new">
         <input type="text" name="body" placeholder="名無し"><br /><br />
-        <textarea name="char" placeholder="文の入力"></textarea><br />
+        <textarea name="bun" placeholder="文の入力"></textarea><br />
         <input type="submit" value="post!">
       </form><br />
 
-      <u1>
+      <p>
         <% @comments.each do |comment| %>
-        <li data-id="<%= comment.id %>">
-          <%= h comment.body %>
+        <div data-id="<%= comment.id %>">
+          <%= h comment.bun %> by <%= h comment.body %>
           <span class="deleteCmd" style="cursor:pointer;color:blue">[x]</span>
-        </li>
+        </div><br />
         <% end %>
-      </u1>
+      </p>
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">         </script>
       <script>

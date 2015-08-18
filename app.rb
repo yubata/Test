@@ -14,3 +14,8 @@ get '/' do
   @comments = Comment.order("id desc").all
   erb :index
 end
+
+post '/new' do
+  Comment.create({:body => params[:body]})
+  redirect '/'
+end

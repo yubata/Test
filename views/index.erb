@@ -8,10 +8,13 @@
       <h1>BBS</h1>
       <u1>
         <% @comments.each do |comment| %>
-        <li data-id="<%= @comment.id %>"">
+        <li data-id="<%= comment.id %>">
           <%= comment.body %>
         </li>
         <% end %>
       </u1>
+      <h2>Add New</h2>
+      <form method="post" action="/new">
+        <input type="text" name="body"> <input type="submit" value="post!">
     </body>
   </html>

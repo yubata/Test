@@ -4,8 +4,16 @@
       <meta charset="utf-8">
       <title>BBS</title>
     </head>
-    <body>
+    <body style="text-align:center">
       <h1>BBS</h1>
+
+      <h2>Add New</h2>
+      <form method="post" action="/new">
+        <input type="text" name="body" placeholder="名無し"><br /><br />
+        <textarea name="char" placeholder="文の入力"></textarea><br />
+        <input type="submit" value="post!">
+      </form><br />
+
       <u1>
         <% @comments.each do |comment| %>
         <li data-id="<%= comment.id %>">
@@ -14,10 +22,6 @@
         </li>
         <% end %>
       </u1>
-      <h2>Add New</h2>
-      <form method="post" action="/new">
-        <input type="text" name="body"> <input type="submit" value="post!">
-      </form>
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">         </script>
       <script>
